@@ -4,9 +4,9 @@ namespace PCGAuthoring.Models
 {
     public class ItemAssignment
     {
-        public int ID { get; set; }
-        public int RoomID { get; set; }
-        public int ItemID { get; set; }
+        public int Id { get; set; }
+        public int RoomId { get; set; }
+        public int ItemId { get; set; }
         
         [Range(0, 10)]
         public int Min { get; set; }

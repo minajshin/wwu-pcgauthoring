@@ -37,7 +37,7 @@ namespace PCGAuthoring.Controllers
             var itemAssignment = await _context.ItemAssignments
                 .Include(i => i.Item)
                 .Include(i => i.Room)
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (itemAssignment == null)
             {
                 return NotFound();
@@ -49,8 +49,8 @@ namespace PCGAuthoring.Controllers
         // GET: ItemAssignments/Create
         public IActionResult Create()
         {
-            ViewData["ItemID"] = new SelectList(_context.Items, "ItemID", "ItemID");
-            ViewData["RoomID"] = new SelectList(_context.Rooms, "RoomID", "RoomID");
+            ViewData["Id"] = new SelectList(_context.Items, "Id", "Id");
+            ViewData["RoomId"] = new SelectList(_context.Rooms, "RoomId", "RoomId");
             return View();
         }
 
@@ -59,7 +59,7 @@ namespace PCGAuthoring.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,RoomID,ItemID,Min,Max")] ItemAssignment itemAssignment)
+        public async Task<IActionResult> Create([Bind("Id,RoomId,Id,Min,Max")] ItemAssignment itemAssignment)
         {
             if (ModelState.IsValid)
             {
@@ -67,8 +67,8 @@ namespace PCGAuthoring.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ItemID"] = new SelectList(_context.Items, "ItemID", "ItemID", itemAssignment.ItemID);
-            ViewData["RoomID"] = new SelectList(_context.Rooms, "RoomID", "RoomID", itemAssignment.RoomID);
+            ViewData["Id"] = new SelectList(_context.Items, "Id", "Id", itemAssignment.ItemId);
+            ViewData["RoomId"] = new SelectList(_context.Rooms, "RoomId", "RoomId", itemAssignment.RoomId);
             return View(itemAssignment);
         }
 
@@ -85,8 +85,8 @@ namespace PCGAuthoring.Controllers
             {
                 return NotFound();
             }
-            ViewData["ItemID"] = new SelectList(_context.Items, "ItemID", "ItemID", itemAssignment.ItemID);
-            ViewData["RoomID"] = new SelectList(_context.Rooms, "RoomID", "RoomID", itemAssignment.RoomID);
+            ViewData["Id"] = new SelectList(_context.Items, "Id", "Id", itemAssignment.ItemId);
+            ViewData["RoomId"] = new SelectList(_context.Rooms, "RoomId", "RoomId", itemAssignment.RoomId);
             return View(itemAssignment);
         }
 
@@ -95,9 +95,9 @@ namespace PCGAuthoring.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,RoomID,ItemID,Min,Max")] ItemAssignment itemAssignment)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,RoomId,Id,Min,Max")] ItemAssignment itemAssignment)
         {
-            if (id != itemAssignment.ID)
+            if (id != itemAssignment.Id)
             {
                 return NotFound();
             }
@@ -111,7 +111,7 @@ namespace PCGAuthoring.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ItemAssignmentExists(itemAssignment.ID))
+                    if (!ItemAssignmentExists(itemAssignment.Id))
                     {
                         return NotFound();
                     }
@@ -122,8 +122,8 @@ namespace PCGAuthoring.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ItemID"] = new SelectList(_context.Items, "ItemID", "ItemID", itemAssignment.ItemID);
-            ViewData["RoomID"] = new SelectList(_context.Rooms, "RoomID", "RoomID", itemAssignment.RoomID);
+            ViewData["Id"] = new SelectList(_context.Items, "Id", "Id", itemAssignment.ItemId);
+            ViewData["RoomId"] = new SelectList(_context.Rooms, "RoomId", "RoomId", itemAssignment.RoomId);
             return View(itemAssignment);
         }
 
@@ -138,7 +138,7 @@ namespace PCGAuthoring.Controllers
             var itemAssignment = await _context.ItemAssignments
                 .Include(i => i.Item)
                 .Include(i => i.Room)
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (itemAssignment == null)
             {
                 return NotFound();
@@ -160,7 +160,7 @@ namespace PCGAuthoring.Controllers
 
         private bool ItemAssignmentExists(int id)
         {
-            return _context.ItemAssignments.Any(e => e.ID == id);
+            return _context.ItemAssignments.Any(e => e.Id == id);
         }
     }
 }

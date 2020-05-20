@@ -31,7 +31,7 @@ namespace PCGAuthoring.Controllers
             }
 
             var item = await _context.Items
-                .FirstOrDefaultAsync(m => m.ItemID == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (item == null)
             {
                 return NotFound();
@@ -51,7 +51,7 @@ namespace PCGAuthoring.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ItemID,ItemName,Type")] Item item)
+        public async Task<IActionResult> Create([Bind("Id,ItemName,Type")] Item item)
         {
             if (ModelState.IsValid)
             {
@@ -83,9 +83,9 @@ namespace PCGAuthoring.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ItemID,ItemName,Type")] Item item)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ItemName,Type")] Item item)
         {
-            if (id != item.ItemID)
+            if (id != item.Id)
             {
                 return NotFound();
             }
@@ -99,7 +99,7 @@ namespace PCGAuthoring.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ItemExists(item.ItemID))
+                    if (!ItemExists(item.Id))
                     {
                         return NotFound();
                     }
@@ -122,7 +122,7 @@ namespace PCGAuthoring.Controllers
             }
 
             var item = await _context.Items
-                .FirstOrDefaultAsync(m => m.ItemID == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (item == null)
             {
                 return NotFound();
@@ -144,7 +144,7 @@ namespace PCGAuthoring.Controllers
 
         private bool ItemExists(int id)
         {
-            return _context.Items.Any(e => e.ItemID == id);
+            return _context.Items.Any(e => e.Id == id);
         }
     }
 }

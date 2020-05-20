@@ -20,30 +20,30 @@ namespace PCGAuthoring.Migrations
 
             modelBuilder.Entity("PCGAuthoring.Models.Item", b =>
                 {
-                    b.Property<int>("ItemID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ItemName")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Type")
                         .HasColumnType("int");
 
-                    b.HasKey("ItemID");
+                    b.HasKey("Id");
 
                     b.ToTable("Items");
                 });
 
             modelBuilder.Entity("PCGAuthoring.Models.ItemAssignment", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ItemID")
+                    b.Property<int>("ItemId")
                         .HasColumnType("int");
 
                     b.Property<int>("Max")
@@ -52,29 +52,29 @@ namespace PCGAuthoring.Migrations
                     b.Property<int>("Min")
                         .HasColumnType("int");
 
-                    b.Property<int>("RoomID")
+                    b.Property<int>("RoomId")
                         .HasColumnType("int");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
-                    b.HasIndex("ItemID");
+                    b.HasIndex("ItemId");
 
-                    b.HasIndex("RoomID");
+                    b.HasIndex("RoomId");
 
                     b.ToTable("ItemAssignments");
                 });
 
             modelBuilder.Entity("PCGAuthoring.Models.Room", b =>
                 {
-                    b.Property<int>("RoomID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("RoomName")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("RoomID");
+                    b.HasKey("Id");
 
                     b.ToTable("Rooms");
                 });
@@ -83,13 +83,13 @@ namespace PCGAuthoring.Migrations
                 {
                     b.HasOne("PCGAuthoring.Models.Item", "Item")
                         .WithMany()
-                        .HasForeignKey("ItemID")
+                        .HasForeignKey("ItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("PCGAuthoring.Models.Room", "Room")
                         .WithMany("RoomItems")
-                        .HasForeignKey("RoomID")
+                        .HasForeignKey("RoomId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

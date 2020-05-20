@@ -36,7 +36,7 @@ namespace PCGAuthoring.Controllers
                 .Include(r => r.RoomItems)
                 .ThenInclude(i => i.Item)
                 .AsNoTracking()
-                .FirstOrDefaultAsync(r => r.RoomID == id);
+                .FirstOrDefaultAsync(r => r.Id == id);
 
             if (room == null)
             {
@@ -60,7 +60,7 @@ namespace PCGAuthoring.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RoomID,RoomName")] Room room, string[] selectedItems, string[] selectedMins, string[] selectedMaxs)
+        public async Task<IActionResult> Create([Bind("Id,Name")] Room room, string[] selectedItems, string[] selectedMins, string[] selectedMaxs)
         {
             room.RoomItems = new List<ItemAssignment>();
 
@@ -71,8 +71,8 @@ namespace PCGAuthoring.Controllers
                 var maxVal = int.Parse(selectedMaxs[key]);
                 var itemToAdd = new ItemAssignment
                 {
-                    RoomID = room.RoomID,
-                    ItemID = int.Parse(item),
+                    RoomId = room.Id,
+                    ItemId = int.Parse(item),
                     Min = minVal,
                     Max = maxVal
                 };
@@ -100,7 +100,7 @@ namespace PCGAuthoring.Controllers
                .Include(r => r.RoomItems)
                .ThenInclude(i => i.Item)
                .AsNoTracking()
-               .FirstOrDefaultAsync(r => r.RoomID == id);
+               .FirstOrDefaultAsync(r => r.Id == id);
 
             if (room == null)
             {
@@ -116,9 +116,9 @@ namespace PCGAuthoring.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("RoomID,RoomName")] Room room, string[] selectedItems, string[] selectedMins, string[] selectedMaxs)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Room room, string[] selectedItems, string[] selectedMins, string[] selectedMaxs)
         {
-            if (id != room.RoomID)
+            if (id != room.Id)
             {
                 return NotFound();
             }
@@ -126,7 +126,7 @@ namespace PCGAuthoring.Controllers
             var roomToUpdate = await _context.Rooms
                 .Include(r => r.RoomItems)
                 .ThenInclude(i => i.Item)
-                .FirstOrDefaultAsync(r => r.RoomID == id);
+                .FirstOrDefaultAsync(r => r.Id == id);
 
 
             if (roomToUpdate == null)
@@ -137,7 +137,7 @@ namespace PCGAuthoring.Controllers
             if (await TryUpdateModelAsync<Room>(
                 roomToUpdate,
                 "",
-                r => r.RoomName, r => r.RoomItems))
+                r => r.Name, r => r.RoomItems))
             {
                 UpdateRoomItems(selectedItems, selectedMins, selectedMaxs, roomToUpdate);
                 try
@@ -167,7 +167,7 @@ namespace PCGAuthoring.Controllers
             }
 
             var room = await _context.Rooms
-                .FirstOrDefaultAsync(r => r.RoomID == id);
+                .FirstOrDefaultAsync(r => r.Id == id);
             if (room == null)
             {
                 return NotFound();
@@ -189,7 +189,7 @@ namespace PCGAuthoring.Controllers
 
         private bool RoomExists(int id)
         {
-            return _context.Rooms.Any(e => e.RoomID == id);
+            return _context.Rooms.Any(e => e.Id == id);
         }
 
 
@@ -200,10 +200,10 @@ namespace PCGAuthoring.Controllers
             foreach (var item in allItems)
             {
                 var viewitem = new AssignedItemData();
-                viewitem.AssignedItemId = item.ItemID;
-                viewitem.AssignedItemName = item.ItemName;
+                viewitem.AssignedItemId = item.Id;
+                viewitem.AssignedItemName = item.Name;
 
-                var t = room.RoomItems.Where(i => i.ItemID == item.ItemID).SingleOrDefault();
+                var t = room.RoomItems.Where(i => i.ItemId == item.Id).SingleOrDefault();
                 viewitem.AssignedMin = (t != null) ? t.Min : 0;
                 viewitem.AssignedMax = (t != null) ? t.Max : 0;
                 viewModel.Add(viewitem);
@@ -219,7 +219,7 @@ namespace PCGAuthoring.Controllers
                 var key = int.Parse(item) - 1;
                 var minVal = int.Parse(selectedMins[key]);
                 var maxVal = int.Parse(selectedMaxs[key]);
-                var obj = roomToUpdate.RoomItems.Where(i => i.ItemID == int.Parse(item)).SingleOrDefault();
+                var obj = roomToUpdate.RoomItems.Where(i => i.ItemId == int.Parse(item)).SingleOrDefault();
                 if (obj != null)
                 {
                     if (minVal != 0 || maxVal != 0)
@@ -238,8 +238,8 @@ namespace PCGAuthoring.Controllers
                     {
                         roomToUpdate.RoomItems.Add(new ItemAssignment
                         {
-                            RoomID = roomToUpdate.RoomID,
-                            ItemID = key,
+                            RoomId = roomToUpdate.Id,
+                            ItemId = key,
                             Min = minVal,
                             Max = maxVal
                         });

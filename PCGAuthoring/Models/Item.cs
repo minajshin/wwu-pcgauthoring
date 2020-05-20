@@ -2,8 +2,8 @@
 {
     public class Item
     {
-        public int ItemID { get; set; }
-        public string ItemName { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
         public ItemType? Type { get; set; }
     }
 
