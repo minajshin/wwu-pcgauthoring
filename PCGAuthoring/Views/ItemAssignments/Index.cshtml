@@ -13,10 +13,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.MinAssignedNum)
+                @Html.DisplayNameFor(model => model.Min)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MaxAssignedNum)
+                @Html.DisplayNameFor(model => model.Max)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Room)
@@ -31,10 +31,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.MinAssignedNum)
+                @Html.DisplayFor(modelItem => item.Min)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MaxAssignedNum)
+                @Html.DisplayFor(modelItem => item.Max)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Room.RoomID)

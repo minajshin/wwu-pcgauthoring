@@ -9,10 +9,10 @@ namespace PCGAuthoring.Models
         public int ItemID { get; set; }
         
         [Range(0, 10)]
-        public int MinAssignedNum { get; set; }
+        public int Min { get; set; }
 
         [Range(0, 10)]
-        public int MaxAssignedNum { get; set; }
+        public int Max { get; set; }
 
 
         // Navigational property

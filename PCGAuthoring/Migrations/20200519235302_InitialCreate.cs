@@ -41,8 +41,8 @@ namespace PCGAuthoring.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RoomID = table.Column<int>(nullable: false),
                     ItemID = table.Column<int>(nullable: false),
-                    MinAssignedNum = table.Column<int>(nullable: false),
-                    MaxAssignedNum = table.Column<int>(nullable: false)
+                    Min = table.Column<int>(nullable: false),
+                    Max = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

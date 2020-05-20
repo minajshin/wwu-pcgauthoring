@@ -46,10 +46,10 @@ namespace PCGAuthoring.Migrations
                     b.Property<int>("ItemID")
                         .HasColumnType("int");
 
-                    b.Property<int>("MaxAssignedNum")
+                    b.Property<int>("Max")
                         .HasColumnType("int");
 
-                    b.Property<int>("MinAssignedNum")
+                    b.Property<int>("Min")
                         .HasColumnType("int");
 
                     b.Property<int>("RoomID")

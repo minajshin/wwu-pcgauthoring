@@ -1,21 +1,39 @@
 ﻿@model PCGAuthoring.Models.Room
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Details|Rooms";
 }
 
-<h1>Details</h1>
+<h1>Room Details</h1>
+<hr />
 
 <div>
-    <h4>Room</h4>
-    <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.RoomName)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.RoomName)
         </dd>
+
+        <!-- Item List -->
+        <dt class="col-sm-2">
+            Items
+        </dt>
+        <dd class="col-sm-10">
+            @{
+                List<PCGAuthoring.Models.ViewModels.AssignedItemData> items = ViewBag.Items;
+
+                foreach (var item in items)
+                {
+                    <span style="padding-right:2rem;">
+                        <!-- Name (min-max) -->
+                        @item.AssignedItemName (@item.AssignedMin - @item.AssignedMax)
+                    </span>
+                }
+            }
+        </dd>
+
     </dl>
 </div>
 <div>

@@ -14,10 +14,10 @@ namespace PCGAuthoring.Data
         {
         }
 
-        public DbSet<PCGAuthoring.Models.Room> Rooms { get; set; }
+        public DbSet<Room> Rooms { get; set; }
 
-        public DbSet<PCGAuthoring.Models.Item> Items { get; set; }
+        public DbSet<Item> Items { get; set; }
 
-        public DbSet<PCGAuthoring.Models.ItemAssignment> ItemAssignments { get; set; }
+        public DbSet<ItemAssignment> ItemAssignments { get; set; }
     }
 }

@@ -9,7 +9,7 @@ using PCGAuthoring.Data;
 namespace PCGAuthoring.Migrations
 {
     [DbContext(typeof(PCGAuthoringContext))]
-    [Migration("20200519221248_InitialCreate")]
+    [Migration("20200519235302_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,10 +48,10 @@ namespace PCGAuthoring.Migrations
                     b.Property<int>("ItemID")
                         .HasColumnType("int");
 
-                    b.Property<int>("MaxAssignedNum")
+                    b.Property<int>("Max")
                         .HasColumnType("int");
 
-                    b.Property<int>("MinAssignedNum")
+                    b.Property<int>("Min")
                         .HasColumnType("int");
 
                     b.Property<int>("RoomID")

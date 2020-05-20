@@ -1,13 +1,12 @@
 ﻿@model PCGAuthoring.Models.Room
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit|Rooms";
 }
 
-<h1>Edit</h1>
-
-<h4>Room</h4>
+<h1>Edit Room</h1>
 <hr />
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -18,6 +17,35 @@
                 <input asp-for="RoomName" class="form-control" />
                 <span asp-validation-for="RoomName" class="text-danger"></span>
             </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Min</th>
+                        <th>Max</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        List<PCGAuthoring.Models.ViewModels.AssignedItemData> allItems = ViewBag.Items;
+
+
+                        foreach (var item in allItems)
+                        {
+                            <tr>
+                                <td>
+                                    <label>@item.AssignedItemName</label>
+                                    <input type="hidden" name="selectedItems" value=@item.AssignedItemId />
+                                </td>
+                                <td><input type="number" name="selectedMins" value=@item.AssignedMin /></td>
+                                <td><input type="number" name="selectedMaxs" value=@item.AssignedMax /></td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
