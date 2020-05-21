@@ -27,16 +27,16 @@ This project is currently in development. Users can manage rooms and items easil
 ## Screenshots
 #### UML and other Designe Diagrams
 <div>
-    <img style="border:1px solid #ccc;" width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/uml.jpg">
-    <img style="border:1px solid #ccc;" width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/dbtables.png">
-    <img style="border:1px solid #ccc;" width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/dbcommunication.png">
+    <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/uml.jpg">
+    <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/dbtables.png">
+    <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/dbcommunication.png">
 </div>
 
 #### Web Application
 <div>
-    <img style="border:1px solid #ccc;" width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/create.png">
-    <img style="border:1px solid #ccc;" width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/list.png">
-    <img style="border:1px solid #ccc;" width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/detail.png">
+    <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/create.png">
+    <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/list.png">
+    <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/detail.png">
 </div>
 
 ## Tech/Framework used
