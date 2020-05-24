@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace PCGAuthoring.Models
 {
@@ -16,7 +17,9 @@ namespace PCGAuthoring.Models
 
 
         // Navigational property
+        [JsonIgnore]
         public Room Room { get; set; }
+        [JsonIgnore]
         public Item Item { get; set; }
     }
 }

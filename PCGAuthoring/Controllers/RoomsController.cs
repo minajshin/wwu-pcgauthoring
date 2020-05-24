@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using PCGAuthoring.Data;
 using PCGAuthoring.Models;
 using PCGAuthoring.Models.ViewModels;
+using System.Text.Json;
 
 namespace PCGAuthoring.Controllers
 {
@@ -186,6 +187,40 @@ namespace PCGAuthoring.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+
+        // GET: Rooms/Generate/5
+        public async Task<IActionResult> Generate(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var room = await _context.Rooms
+                .Include(r => r.RoomItems)
+                .ThenInclude(i => i.Item)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(r => r.Id == id);
+
+            if (room == null)
+            {
+                return NotFound();
+            }
+            //PopulateAssignedItemData(room);
+
+            var jsonStr = JsonSerializer.Serialize(room);
+            ViewBag.JsonStr = jsonStr;
+
+            return View();
+        }
+
+
+
+
+        //-------------------
+        // Helper methods
+        //-------------------
 
         private bool RoomExists(int id)
         {
