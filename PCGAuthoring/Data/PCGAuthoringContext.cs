@@ -19,5 +19,7 @@ namespace PCGAuthoring.Data
         public DbSet<Item> Items { get; set; }
 
         public DbSet<ItemAssignment> ItemAssignments { get; set; }
+
+        public DbSet<Request> Requests { get; set; }
     }
 }

@@ -210,6 +210,19 @@ namespace PCGAuthoring.Controllers
             //PopulateAssignedItemData(room);
 
             var jsonStr = JsonSerializer.Serialize(room);
+
+
+            // Creat db row
+            var newRequest = new Request()
+            {
+                State = ReqState.CREATED,
+                JsonData = jsonStr
+            };
+
+            _context.Requests.Add(newRequest);
+            await _context.SaveChangesAsync();
+
+            // Pass json string to the view
             ViewBag.JsonStr = jsonStr;
 
             return View();

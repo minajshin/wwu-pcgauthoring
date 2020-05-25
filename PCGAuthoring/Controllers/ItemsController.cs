@@ -51,7 +51,7 @@ namespace PCGAuthoring.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ItemName,Type")] Item item)
+        public async Task<IActionResult> Create([Bind("Id,Name,Type")] Item item)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace PCGAuthoring.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ItemName,Type")] Item item)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Type")] Item item)
         {
             if (id != item.Id)
             {
