@@ -215,8 +215,8 @@ namespace PCGAuthoring.Controllers
             // Creat db row
             var newRequest = new Request()
             {
-                State = ReqState.CREATED,
-                JsonData = jsonStr
+                Status = ReqState.PENDING,
+                AuthoringData = jsonStr
             };
 
             _context.Requests.Add(newRequest);

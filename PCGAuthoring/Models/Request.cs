@@ -11,9 +11,9 @@ namespace PCGAuthoring.Models
         public int Id { get; set; }                      // Request Id
     
         public DateTime CreatedDate { get; set; }
-        public ReqState State { get; set; }               // State column
+        public ReqState Status { get; set; }               // State column
 
-        public string JsonData { get; set; }            // Json data from the webserver
+        public string AuthoringData { get; set; }            // Json data from the webserver
         public string ResultData { get; set; }          // Result data from the unity
 
         public Request()
@@ -24,9 +24,9 @@ namespace PCGAuthoring.Models
 
     public enum ReqState
     {
-        CREATED,
-        PICKED,
+        PENDING,
+        INPROCESS,
         GENERATED,
-        COMPLETED
+        COMPLETE
     }
 }

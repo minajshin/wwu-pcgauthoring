@@ -29,7 +29,7 @@ namespace PCGAuthoring
 
             services.AddDbContext<PCGAuthoringContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("PCGAuthoringContext")));
-
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,7 +56,7 @@ namespace PCGAuthoring
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Room}/{id?}");
+                    pattern: "{controller=Rooms}/{action=Index}/{id?}");
             });
         }
     }
