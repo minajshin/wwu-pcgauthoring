@@ -27,9 +27,11 @@ namespace PCGAuthoring
         {
             services.AddControllersWithViews();
 
+            //services.AddDbContext<PCGAuthoringContext>(options =>
+            //options.UseSqlServer(Configuration.GetConnectionString("PCGAuthoringContext")));
             services.AddDbContext<PCGAuthoringContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("PCGAuthoringContext")));
-            
+            options.UseMySQL(Configuration.GetConnectionString("PCGAuthoring")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
