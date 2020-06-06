@@ -24,15 +24,33 @@ public class DbManager : MonoBehaviour
         MySqlDataReader rdr = cmd.ExecuteReader();
         rdr.Close();
     }
-    public void AddAuthoringData(int id, string data)
+    public void AddResultData(int id, string data)
     {
         string connectionURL = MakeConnectionURL();
         this.conn = new MySqlConnection(connectionURL);
         this.conn.Open();
-        string sql = "UPDATE requests SET AuthoringData='" + data + "' WHERE Id=" + id;
+        string sql = "UPDATE requests SET ResultData='" + data + "' WHERE Id=" + id;
         MySqlCommand cmd = new MySqlCommand(sql, conn);
         MySqlDataReader rdr = cmd.ExecuteReader();
         rdr.Close();
+    }
+
+    public int GetStatus(int id)
+    {
+        int status = -1;
+
+        string connectionURL = MakeConnectionURL();
+        this.conn = new MySqlConnection(connectionURL);
+        this.conn.Open();
+
+        string sql = "SELECT Status FROM requests WHERE Id=" + id;
+        MySqlCommand cmd = new MySqlCommand(sql, conn);
+        MySqlDataReader rdr = cmd.ExecuteReader();
+        while (rdr.Read())
+        {
+            status = (int) rdr["Status"];
+        }
+        return status;
     }
 
     public object[] GetRequestsByStatus(ReqState status)
@@ -48,7 +66,7 @@ public class DbManager : MonoBehaviour
         MySqlDataReader rdr = cmd.ExecuteReader();
         while (rdr.Read())
         {
-            requests.Add(rdr["id"]);
+            requests.Add(rdr["Id"]);
         }
         return requests.ToArray();
     }

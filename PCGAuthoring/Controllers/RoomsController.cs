@@ -7,6 +7,10 @@ using PCGAuthoring.Data;
 using PCGAuthoring.Models;
 using PCGAuthoring.Models.ViewModels;
 using System.Text.Json;
+using System.Timers;
+using System;
+using Org.BouncyCastle.Ocsp;
+using System.Diagnostics;
 
 namespace PCGAuthoring.Controllers
 {
@@ -222,14 +226,31 @@ namespace PCGAuthoring.Controllers
             _context.Requests.Add(newRequest);
             await _context.SaveChangesAsync();
 
+            // Check db for result
+            string resultData = WaitResult(newRequest.Id);
+
             // Pass json string to the view
             ViewBag.JsonStr = jsonStr;
+            ViewBag.ResultData = resultData;
 
             return View();
         }
 
+        private string WaitResult(int id)
+        {
+            string result = "";
+            
+            Request request = _context.Requests.First(r => r.Id == id);
+            
+            if (request.Status.Equals(ReqState.PENDING))
+            {
+                result = "/result/Fancy4.png";
+                //result = request.ResultData;
+                // for testing
+            }
 
-
+            return result;
+        }
 
         //-------------------
         // Helper methods
