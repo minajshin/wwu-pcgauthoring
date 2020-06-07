@@ -5,11 +5,20 @@
 }
 
 <h1>Generate</h1>
+
+<h3 style="margin-top:2em">Selected Data:</h3>
 <div>
-        <p>@ViewBag.JsonStr</p>
-        <a asp-action="Index">Back to List</a>
+
+    <p>@ViewBag.JsonStr</p>
 
 </div>
+
+<h3 style="margin-top:2em">Result: </h3>
 <div style="width: 60%; margin:auto;">
     <img style="width:100%" src=@ViewBag.ResultData>
+</div>
+
+<div style="text-align: center; margin-top: 2em;">
+    <a class="btn btn-primary" href="~/result/Fancy4.png">Download</a>
+    <a class="btn btn-primary" asp-action="Index">Back to List</a>
 </div>
