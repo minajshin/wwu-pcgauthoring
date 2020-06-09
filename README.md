@@ -1,7 +1,7 @@
 # PCG Authoring Tool
 
 ```diff
-- All files have been moved to the school repository. This repo only has sample code.
+- All files have been moved to the school repository. This repo only has sample codes.
 ```
 
 
@@ -12,7 +12,7 @@ This repository is for my undergraduate research and a senior project. The Proce
 .
 |-- Docs                            # Documentation files 
 |-- PCGAuthoring                    # Web application for Authoring
-|-- PCGAuthoring_Unity              # Source files for Unity side (in progress)
+|-- PCGAuthoring_Unity              # Source files for Unity side
 ```
 
 
