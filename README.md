@@ -1,4 +1,10 @@
 # PCG Authoring Tool
+
+```diff
+- All files have been moved to the school repository. This repo only has sample code.
+```
+
+
 This repository is for my undergraduate research and a senior project. The Procedural Content Generation system is for creating content procedurally for a virtual environment. As part of this system, PCG Authoring will allow a user to input parameters used during the content generation process.
 
 ## Repository Structure
