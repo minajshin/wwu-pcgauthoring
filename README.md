@@ -45,6 +45,11 @@ This project is currently in development. Users can manage rooms and items easil
     <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/detail.png">
 </div>
 
+#### Research Poster
+<div>
+    <img width="500" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/poster.png">
+</div>
+
 ## Tech/Framework used
 - ASP.NET Core MVC
 - Entity Framework
