@@ -16,7 +16,7 @@ This repository is for my undergraduate research and a senior project. The Proce
 ```
 
 
-## Porject Status
+## Project Status
 This project is currently in development. Users can manage rooms and items easily through the Web UI, such as adding, updating, deleting, etc. For seamless integration with the existing generate application in Unity, the ASP.NET Core MVC framework was selected to build web service. Authoring tool will be extended to cover the whole house environment and the implementation to communicate between the web app and the unity app is in progress. Here are some future tasks planned.
 
 #### 1. Web Application Side
