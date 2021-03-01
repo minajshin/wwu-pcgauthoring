@@ -31,7 +31,7 @@ This project is currently in development. Users can manage rooms and items easil
 
 
 ## Screenshots
-#### UML and other Designe Diagrams
+#### UML and other Design Diagrams
 <div>
     <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/uml.jpg">
     <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/dbtables.png">
