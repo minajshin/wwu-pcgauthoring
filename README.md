@@ -41,15 +41,15 @@ This project is currently in development. Users can manage rooms and items easil
 <br><br>
 ## Screenshots
 <div>
-    <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/create.png">
-    <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/list.png">
-    <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/detail.png">
+    <img width="50%" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/create.png">
+    <img width="50%" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/list.png">
+    <img width="50%" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/detail.png">
 </div>
 
 <br><br>
 ## Research Poster
 <div>
-    <img width="500" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/poster.png">
+    <img src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/poster.png">
 </div>
 
 <br><br>
