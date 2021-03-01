@@ -16,7 +16,6 @@ This repository is for my undergraduate research and a senior project. The Proce
 |-- PCGAuthoring_Unity              # Source files for Unity side
 ```
 
-<br><br>
 ## Project Status
 This project is currently in development. Users can manage rooms and items easily through the Web UI, such as adding, updating, deleting, etc. For seamless integration with the existing generate application in Unity, the ASP.NET Core MVC framework was selected to build web service. Authoring tool will be extended to cover the whole house environment and the implementation to communicate between the web app and the unity app is in progress. Here are some future tasks planned.
 
@@ -30,7 +29,6 @@ This project is currently in development. Users can manage rooms and items easil
 - Functionality to create proper object based on parameters and trigger genenration process
 
 
-<br><br>
 ## UML Diagrams
 <div>
     <img width="40%" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/uml.jpg">
@@ -39,20 +37,20 @@ This project is currently in development. Users can manage rooms and items easil
     
 </div>
 
-<br><br>
+
 ## Screenshots
 <div>
-    <img width="40%" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/create.png">
-    <img width="40%" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/detail.png">
+    <img src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/create.png">
+    <img src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/detail.png">
 </div>
 
-<br><br>
+
 ## Research Poster
 <div>
     <img src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/poster.png">
 </div>
 
-<br><br>
+
 ## Tech/Framework used
 - ASP.NET Core MVC
 - Entity Framework
