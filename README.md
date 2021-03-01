@@ -30,22 +30,21 @@ This project is currently in development. Users can manage rooms and items easil
 
 
 
-## Screenshots
-#### UML and other Design Diagrams
+## UML and other Diagrams
 <div>
     <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/uml.jpg">
     <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/dbtables.png">
     <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/dbcommunication.png">
 </div>
 
-#### Web Application
+## Screenshots
 <div>
     <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/create.png">
     <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/list.png">
     <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/detail.png">
 </div>
 
-#### Research Poster
+## Research Poster
 <div>
     <img width="500" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/poster.png">
 </div>
