@@ -33,17 +33,17 @@ This project is currently in development. Users can manage rooms and items easil
 <br><br>
 ## UML Diagrams
 <div>
-    <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/uml.jpg">
-    <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/dbtables.png">
-    <img width="300" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/dbcommunication.png">
+    <img width="40%" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/uml.jpg">
+    <img width="40%" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/dbcommunication.png">
+    <img src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/dbtables.png">
+    
 </div>
 
 <br><br>
 ## Screenshots
 <div>
-    <img width="50%" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/create.png">
-    <img width="50%" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/list.png">
-    <img width="50%" src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/detail.png">
+    <img src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/create.png">
+    <img src="https://github.com/minashin/pcg-authoring/blob/master/docs/screenshot/detail.png">
 </div>
 
 <br><br>
